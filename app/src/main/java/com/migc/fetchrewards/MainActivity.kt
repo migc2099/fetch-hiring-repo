@@ -19,15 +19,17 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
 import com.migc.fetchrewards.ui.theme.FetchRewardsTheme
 import com.migc.fetchrewards.ui.theme.Typography
 import com.migc.fetchrewards.ui.theme.backgroundColor
 import com.migc.fetchrewards.ui.theme.mainColor
+import com.migc.fetchrewards.util.Dimen.LARGE_PADDING
+import com.migc.fetchrewards.util.Dimen.MEDIUM_PADDING
+import com.migc.fetchrewards.util.Dimen.SMALL_ELEVATION
+import com.migc.fetchrewards.util.Dimen.SMALL_PADDING
 import org.koin.androidx.compose.koinViewModel
 
 class MainActivity : ComponentActivity() {
@@ -51,7 +53,7 @@ class MainActivity : ComponentActivity() {
                                 Surface(
                                     modifier = Modifier.fillMaxWidth(),
                                     color = mainColor,
-                                    shadowElevation = 2.dp
+                                    shadowElevation = SMALL_ELEVATION
                                 ) {
                                     Row(
                                         modifier = Modifier.fillMaxWidth(),
@@ -61,7 +63,7 @@ class MainActivity : ComponentActivity() {
                                             text = stringResource(id = R.string.list_id_text),
                                             fontSize = Typography.titleLarge.fontSize
                                         )
-                                        Spacer(modifier = Modifier.width(1.dp))
+                                        Spacer(modifier = Modifier.width(SMALL_PADDING))
                                         Text(
                                             text = group.key.toString(),
                                             fontSize = Typography.titleLarge.fontSize,
@@ -80,7 +82,7 @@ class MainActivity : ComponentActivity() {
                                         text = item.id.toString(),
                                         textAlign = TextAlign.End
                                     )
-                                    Spacer(modifier = Modifier.width(16.dp))
+                                    Spacer(modifier = Modifier.width(LARGE_PADDING))
                                     Text(
                                         modifier = Modifier.weight(2f),
                                         text = item.name.toString()
@@ -88,7 +90,7 @@ class MainActivity : ComponentActivity() {
                                 }
                             }
                             item { 
-                                Spacer(modifier = Modifier.height(8.dp))
+                                Spacer(modifier = Modifier.height(MEDIUM_PADDING))
                             }
 
                         }
